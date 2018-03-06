@@ -8,6 +8,14 @@ import org.springframework.context.annotation.Configuration;
 
 import java.beans.PropertyVetoException;
 
+/**
+ * DataSource
+ * 配置内容如下：
+ * (1) 数据库驱动
+ * (2) 数据库链接url
+ * (3) 数据库用户名
+ * (4) 数据库密码
+ */
 @Configuration
 //  配置mybatis mapper 的扫描路径(其实就是dao层)
 @MapperScan("com.leadbank.region.dao")

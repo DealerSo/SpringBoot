@@ -12,6 +12,14 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.sql.DataSource;
 import java.io.IOException;
 
+/**
+ * SessionFactory
+ * 配置内容如下：
+ * (1) 加载mybatis 全局设置配置文件
+ * (2) 加载mapper 配置文件，编写sql语句的xml
+ * (3) 设置dataSource
+ * (4) 加载扫描实体类包路径
+ */
 @Configuration
 public class SessionFactoryConfiguration {
     // 从application.properties配置文件中读取
@@ -41,7 +49,7 @@ public class SessionFactoryConfiguration {
         sqlSessionFactoryBean.setMapperLocations(resolver.getResources(packageScanPath));
         // 设置dataSource
         sqlSessionFactoryBean.setDataSource(dataSource);
-        // 扫描实体类的路劲
+        // 扫描实体类的路径
         sqlSessionFactoryBean.setTypeAliasesPackage(entityPackage);
         return sqlSessionFactoryBean;
     }
