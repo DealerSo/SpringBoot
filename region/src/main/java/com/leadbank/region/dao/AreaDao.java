@@ -4,7 +4,7 @@ import com.leadbank.region.entity.Area;
 
 import java.util.List;
 
-public interface AreaMapper {
+public interface AreaDao {
 
     /**
      * 查询所有area信息
