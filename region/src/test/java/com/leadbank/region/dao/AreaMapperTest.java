@@ -23,10 +23,9 @@ public class AreaMapperTest {
     private AreaDao areaDao;
 
     @Test
-    @Ignore
     public void queryAreaList() throws Exception {
         List<Area> areaList = areaDao.queryAreaList();
-        Assert.assertEquals(0,areaList.size());
+        Assert.assertEquals(0, areaList.size());
     }
 
     @Test
@@ -38,25 +37,29 @@ public class AreaMapperTest {
     }
 
     @Test
-    @Ignore
     public void insertArea() throws Exception {
         Area area = new Area();
         area.setAreaName("北京");
         area.setPriority(9);
         area.setCreatedTime(new Date());
         int result = areaDao.insertArea(area);
-        Assert.assertEquals(1,result);
+        Assert.assertEquals(1, result);
     }
 
     @Test
-    @Ignore
     public void updateArea() throws Exception {
+        Area area = new Area();
+        area.setAreaId(2);
+        area.setPriority(8);
+        area.setUpdatedTime(new Date());
+        int result = areaDao.updateArea(area);
+        Assert.assertEquals(1, result);
     }
 
     @Test
-    @Ignore
     public void deleteArea() throws Exception {
+        int result = areaDao.deleteArea(2);
+        Assert.assertEquals(1, result);
     }
-
 
 }

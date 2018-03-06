@@ -46,14 +46,14 @@
 	<update id="updateArea" parameterType="com.leadbank.region.entity.Area">
 		UPDATE T_AREA
 		<set>
-			<if test="areaName != null">area_name = #{areaName}</if>
-			<if test="priority != null">priority = #{priority}</if>
+			<if test="areaName != null">area_name = #{areaName},</if>
+			<if test="priority != null">priority = #{priority},</if>
 			<if test="updatedTime != null">updated_time = #{updatedTime}</if>
 		</set>
-		WHERE area_id = #{area_id}
+		WHERE area_id = #{areaId}
 	</update>
 
 	<delete id="deleteArea" parameterType="int">
-		DELETE FROM T_AREA WHERE area_id #{areaId}
+		DELETE FROM T_AREA WHERE area_id = #{areaId}
 	</delete>
 </mapper>
